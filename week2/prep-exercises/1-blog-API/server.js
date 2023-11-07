@@ -95,6 +95,7 @@ app.get("/blogs", (req, res) => {
   fs.readdir(blogPostFolder, (err, files) => {
     if (err) {
       res.status(500).json({ error: "Error reading blog posts" });
+      // .send(errormessage)
     } else {
       // Filter ".txt" files
       const txtFiles = files.filter((fileName) => fileName.endsWith('.txt'));
